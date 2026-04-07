@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 4 - Lista de estudos</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">Aplicacoes Front-End</p>
+        <h1>Lista de estudos do dia</h1>
+        <p class="hero__text">
+          Pratica de DOM, eventos, validacao simples e lista dinamica.
+        </p>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="panel">
+        <h2>Novo item manual</h2>
+
+        <form id="study-form" class="study-form">
+          <label class="field">
+            <span>Atividade</span>
+            <input
+              id="study-input"
+              name="title"
+              type="text"
+              placeholder="Ex: Revisar addEventListener"
+            />
+          </label>
+
+          <button class="btn btn--primary" type="submit">Adicionar</button>
+        </form>
+
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Sugestões da API</h2>
+        <p class="panel__subtitle">
+          Evolua a lista da aula 04 consumindo jsonplaceholder (`/todos`), Use um userID de 1 a 10 ou deixar em branco
+        </p>
+        <form id="api-form" class="study-form">
+          <label class="field">
+            <span>User ID</span>
+            <input
+            id="api-user-id"
+            name="userId"
+            type="number"
+            min="1"
+            max="10"
+            placeholder="Ex: 1"/>
+          </label>
+
+          <button class="btn btn--ghost" type="submit">Buscar Sugestoes</button>
+        </form>
+
+        <p id="api-feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="panel__header">
+          <div>
+            <h2>Lista dinamica</h2>
+            <p class="panel__subtitle">A mesma lista agora pode receber itens manuais e sugestões vindas da API</p>
+          </div>
+          <button id="reload-button" class="btn btn--ghost" type="button">Recarregar a ultima busca</button>
+        </div>
+
+        <p id="status-message" class="status" aria-live="polite" hidden>
+          Carregando sugestões da API
+        </p>
+
+        <p id="empty-state" class="empty-state" hidden>
+          Nenhum item cadastrado ainda.
+        </p>
+
+        <ul id="study-list" class="study-list" aria-label="Itens de estudo"></ul>
+      </section>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
